@@ -1,0 +1,8 @@
+C:\Users\Angela Powell\source\repos\Mechanionjoin\bin\Debug\Mechanionjoin.dll
+C:\Users\Angela Powell\source\repos\Mechanionjoin\bin\Debug\Mechanionjoin.pdb
+C:\Users\Angela Powell\source\repos\Mechanionjoin\obj\Debug\Mechanionjoin.csprojAssemblyReference.cache
+C:\Users\Angela Powell\source\repos\Mechanionjoin\obj\Debug\Mechanionjoin.csproj.CoreCompileInputs.cache
+C:\Users\Angela Powell\source\repos\Mechanionjoin\obj\Debug\Mechanionjoin.dll
+C:\Users\Angela Powell\source\repos\Mechanionjoin\obj\Debug\Mechanionjoin.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\xxx (3)\Assemblies\Mechanionjoin.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\xxx (3)\Assemblies\Mechanionjoin.pdb
