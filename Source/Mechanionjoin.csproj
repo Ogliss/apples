@@ -33,7 +33,6 @@
   <ItemGroup>
     <Compile Include="CompMechanoidSpawner.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="ThingDefGenerator_MechSpawner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

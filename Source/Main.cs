@@ -14,8 +14,7 @@ namespace Mechanionjoin
     {
         static Main() 
         {
-
-			foreach (PawnKindDef kindDef in DefDatabase<PawnKindDef>.AllDefs.ToList<PawnKindDef>())
+			foreach (PawnKindDef kindDef in DefDatabase<PawnKindDef>.AllDefs)
 			{
 				if (kindDef.RaceProps.Humanlike)
 				{
