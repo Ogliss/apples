@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef Name="AndroidAdvanced">
+	    <defName>ADVAndroid</defName>
+		<label>advanced android</label>
+        <race>Mech_ADVandroid</race>
+		<combatPower>50</combatPower>
+        <defaultFactionType>OutlanderCivil</defaultFactionType>
+        <baseRecruitDifficulty>1.2</baseRecruitDifficulty>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <itemQuality>Legendary</itemQuality>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <maxGenerationAge>100000000</maxGenerationAge>
+		<backstoryFiltersOverride inherit="false">
+			<li>
+				<categories>
+					<li>robotB)</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+        <gearHealthRange>
+            <min>0.5</min>
+            <max>1.8</max>
+		</gearHealthRange>
+	</PawnKindDef>
+	
+    <PawnKindDef Name="ColonistAdvanced">
+	    <defName>ADVcolonist</defName>
+		<label>advanced android colonist</label>
+        <race>Mech_ADVandroid</race>
+		<combatPower>50</combatPower>
+        <defaultFactionType>PlayerColony</defaultFactionType>
+        <baseRecruitDifficulty>1.2</baseRecruitDifficulty>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <itemQuality>Legendary</itemQuality>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <maxGenerationAge>100000000</maxGenerationAge>
+		<backstoryFiltersOverride inherit="false">
+			<li>
+				<categories>
+					<li>robotB)</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+        <gearHealthRange>
+            <min>0.5</min>
+            <max>1.8</max>
+		</gearHealthRange>
+	</PawnKindDef>
+	
+	<PawnKindDef Name="AndroidBaic">
+	    <defName>BASAndroid</defName>
+		<label>basic android</label>
+        <race>Mech_BASandroid</race>
+		<combatPower>50</combatPower>
+        <defaultFactionType>OutlanderCivil</defaultFactionType>
+        <baseRecruitDifficulty>1.2</baseRecruitDifficulty>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <itemQuality>Legendary</itemQuality>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <maxGenerationAge>100000000</maxGenerationAge>
+		<backstoryFiltersOverride inherit="false">
+			<li>
+				<categories>
+					<li>robotB)</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+        <gearHealthRange>
+            <min>0.5</min>
+            <max>1.8</max>
+		</gearHealthRange>
+	</PawnKindDef>
+	
+		<AlienRace.BackstoryDef>
+    <defName>placeholderstory1</defName>
+    <title>robobot</title>
+    <titleShort>robot</titleShort>
+    <baseDescription>[PAWN_nameDef] is a robot</baseDescription>
+	    <bodyTypeGlobal>Hulk</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+           <li>robotB)</li>
+        </spawnCategories>
+		    <skillGains>
+              <li>
+                 <defName>Melee</defName>
+               <amount>14</amount>
+             </li>
+            </skillGains>
+	<maleCommonality>100</maleCommonality>
+    </AlienRace.BackstoryDef>
+	
+	<AlienRace.BackstoryDef>
+    <defName>placeholderstory2</defName>
+    <title>Big robot</title>
+    <titleShort>Big</titleShort>
+    <baseDescription>[PAWN_nameDef] is big and stronk</baseDescription>
+	    <bodyTypeGlobal>Hulk</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+           <li>robotB)</li>
+        </spawnCategories>
+	<maleCommonality>100</maleCommonality>
+    </AlienRace.BackstoryDef>
+</Defs>

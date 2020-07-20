@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName="VanometricPowerCell"]/costList</xpath>
+        <value>
+            <costList>
+                <Gold>100</Gold>
+                <Nanosteel>40</Nanosteel>
+                <Uranium>50</Uranium>
+                <ComponentMech>14</ComponentMech>
+            </costList>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="VanometricPowerCell"]</xpath>
+    <value>
+     <researchPrerequisites>
+      <li>VanometricPower</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+	<designationCategory>Power</designationCategory>
+        </value>
+    </Operation>
+	
+   <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="VanometricPowerCell"]/statBases</xpath>
+        <value>
+	  <WorkToBuild>6000</WorkToBuild>
+        </value>
+    </Operation>
+		
+	
+</Patch>

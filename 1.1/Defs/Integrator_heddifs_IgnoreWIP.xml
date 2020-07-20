@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="MechDrugs" ParentName="DrugBase" Abstract="True">
+    <ingestible>
+      	<foodType>Processed, Fluid</foodType>
+		<drugCategory>Medical</drugCategory>
+      	<baseIngestTicks>50</baseIngestTicks>
+		<chairSearchRadius>0</chairSearchRadius>
+		<ingestHoldUsesTable>false</ingestHoldUsesTable>
+		<preferability>NeverForNutrition</preferability>
+      	<ingestSound>Ingest_Inject</ingestSound>
+      	<ingestCommandString>Inject {0}</ingestCommandString>
+      	<ingestReportString>Injecting {0}.</ingestReportString>
+		<ingestHoldOffsetStanding>
+        			<northDefault>
+        				<offset>(0.18,0,0)</offset>
+        			</northDefault>
+      		</ingestHoldOffsetStanding>
+    </ingestible>
+	<socialPropernessMatters>true</socialPropernessMatters>
+		<thingCategories Inherit="false">
+      		<li>Manufactured</li>
+   	</thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="MechDrugs">
+    <defName>MechIntegrator</defName>
+    <label>mechanoid integrator</label>
+    <description>mechanoid integrator.</description>
+    <graphicData>
+      <texPath>Things/Item/integrator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>70</MarketValue>
+      <Mass>2</Mass>
+    </statBases>
+    <techLevel>Ultra</techLevel>
+    <minRewardCount>10</minRewardCount>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="RandomDrugEffect.IngestionOutcomeDoer_GiveHediff">
+		  <hediffDefs>
+		            <li>MechIntEffectOne</li>
+                    <li>MechIntEffectTwo</li>
+          </hediffDefs>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>5010</listOrder>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+  </ThingDef>
+
+    
+  <HediffDef>
+    <defName>MechIntEffectOne</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>blood filtration enhancement</label>
+    <description>Active luciferium mechanites in the body. They improve the body's functioning in all respects. However, if they are not regularly replenished with more doses of luciferium, they lose cohesion and drive the user insane.</description>
+    <defaultLabelColor>(199,249,233)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.50</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+    <HediffDef>
+    <defName>MechIntEffectTwo</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>blood filtration failure</label>
+    <description>Active luciferium mechanites in the body. They improve the body's functioning in all respects. However, if they are not regularly replenished with more doses of luciferium, they lose cohesion and drive the user insane.</description>
+    <defaultLabelColor>(199,249,233)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>-0.50</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

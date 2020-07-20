@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<!--  Nanosteel -->
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>RimPlas</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs</xpath>
+		<value>
+   <ResearchProjectDef>
+    <defName>Nanosteel</defName>
+    <label>Nanosteel</label>
+    <description>Learn how to create Nanosteel.</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>RimPlas_CarbonComposites</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>22.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+		</value>
+	</match>
+	</Operation>
+	
+   <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>RimPlas</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs</xpath>
+		<value>
+	<RecipeDef>
+		<defName>CraftNanosteel</defName>
+		<label>Mould Nanosteel</label>
+		<description>Mould 100 Nanosteel</description>
+		<workAmount>2000</workAmount>
+		<jobString>Moulding Nanosteel.</jobString>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<targetCountAdjustment>50</targetCountAdjustment>
+		<workSkill>Intellectual</workSkill>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>CarboPlasteel</li>
+				<li>RPMechanites</li>
+				<li>Synthbase</li>
+				<li>Uranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	    <recipeUsers>
+			<li>RimPlas_AdvInjMld</li>
+		</recipeUsers>
+		<researchPrerequisite>Nanosteel</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CarboPlasteel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RPMechanites</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Synthbase</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>25</count>
+			</li>
+		</ingredients>
+		<products>
+			<Nanosteel>100</Nanosteel>
+		</products>
+      	<skillRequirements>
+			<Crafting>10</Crafting>
+			<Intellectual>7</Intellectual>
+      	</skillRequirements>
+	</RecipeDef>
+		</value>
+	</match>
+	</Operation>
+	
+	<!--  Mechanites -->
+	
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>RimPlas</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs</xpath>
+		<value>
+   <ResearchProjectDef>
+    <defName>MechanitesCraft</defName>
+    <label>Mechanites</label>
+    <description>Learn how to create Mechanites.</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>MechaFabricationAdv</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>19.50</researchViewX>
+    <researchViewY>5.00</researchViewY>
+  </ResearchProjectDef>
+		</value>
+	</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>RimPlas</li>
+	</mods>
+	<match Class="PatchOperationAdd">
+		<xpath>/Defs</xpath>
+		<value>
+  <RecipeDef>
+    <defName>Make_Mechanites</defName>
+    <label>make mechanites</label>
+    <description>make mechanites.</description>
+    <jobString>making mechanites.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>28000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<recipeUsers>
+      <li>TableMechMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentMech</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentSpacer</li>
+        <li>Silver</li>
+        <li>Neutroamine</li>
+        <li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <RPMechanites>1</RPMechanites>
+    </products>
+    <researchPrerequisite>MechanitesCraft</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>14</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+		</value>
+	</match>
+	</Operation>
+	
+ <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>RimPlas</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[defName="MechDisassemble"]/products</xpath>
+				<value>
+					<RPMechanites>1</RPMechanites>  
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+</Patch>

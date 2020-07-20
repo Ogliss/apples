@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+   <RecipeDef Name="SurgeryMech" ParentName="SurgeryInstallBodyPartArtificialBase" Abstract="True">
+      <surgerySuccessChanceFactor>0.90</surgerySuccessChanceFactor>
+      <deathOnFailedSurgeryChance>0.01</deathOnFailedSurgeryChance>
+      <!--<dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>-->
+      <skillRequirements>
+         <Medicine>5</Medicine>
+      </skillRequirements>
+   </RecipeDef>
+   
+    <HediffDef Name="addedPartMech" Abstract="True">
+      <hediffClass>Hediff_AddedPart</hediffClass>
+      <isBad>false</isBad>
+      <defaultLabelColor>(199,249,233)</defaultLabelColor>
+      <addedPartProps>
+		<betterThanNatural>true</betterThanNatural>
+      </addedPartProps>
+   </HediffDef>
+   
+    <HediffDef Name="addedPartMechTorso" Abstract="True">
+      <hediffClass>Hediff_Implant</hediffClass>
+      <defaultLabelColor>(199,249,233)</defaultLabelColor>
+      <isBad>false</isBad>
+      <addedPartProps>
+		<betterThanNatural>true</betterThanNatural>
+      </addedPartProps>
+   </HediffDef>
+
+<!--<Mechanoid Arm>-->
+   <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechArm</defName>
+      <label>install mechanoid arm</label>
+      <description>Installs mechanoid arm.</description>
+      <jobString>Installing mechanoid arm.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechArm</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechArm</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Shoulder</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechArm</addsHediff>
+   </RecipeDef>
+   
+    <HediffDef ParentName="addedPartMech">
+      <defName>MechArm</defName>
+      <label>mechanoid arm</label>
+	  <labelNoun>an mechanoid arm</labelNoun>
+	  <description>An installed mechanoid arm.</description>
+      <descriptionHyperlinks><ThingDef>MechArm</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechArm</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.25</partEfficiency>
+      </addedPartProps>
+	  <stages>
+			<li>
+                <statOffsets>
+					<MeleeWeapon_CooldownMultiplier>-.05</MeleeWeapon_CooldownMultiplier>
+					<ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+                </statOffsets>
+            </li>
+		</stages>
+      <comps>
+         <li Class="HediffCompProperties_VerbGiver">
+            <tools>
+               <li>
+                  <label>mech claws</label>
+                  <capacities>
+                     <li>Cut</li>
+                  </capacities>
+                  <power>22</power>
+                  <cooldownTime>1.6</cooldownTime>
+               </li>
+            </tools>
+         </li>
+      </comps>
+   </HediffDef>
+   
+ <!--<Mechanoid Leg>-->
+ 
+   <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechLeg</defName>
+      <label>install mechanoid leg</label>
+      <description>Installs mechanoid leg.</description>
+      <jobString>Installing mechanoid leg.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechLeg</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechLeg</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Leg</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechLeg</addsHediff>
+   </RecipeDef>
+   
+     <HediffDef ParentName="addedPartMech">
+      <defName>MechLeg</defName>
+      <label>mechanoid leg</label>
+	  <labelNoun>an mechanoid leg</labelNoun>
+	  <description>An installed mechanoid leg.</description>
+      <descriptionHyperlinks><ThingDef>MechLeg</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechLeg</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.30</partEfficiency>
+      </addedPartProps>
+	  <stages>
+			<li>
+                <statOffsets>
+					<MeleeDodgeChance>0.3</MeleeDodgeChance>
+					<ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+                </statOffsets>
+            </li>
+		</stages>
+   </HediffDef>
+   
+  <!--<Mechanoid Light Sensor>-->
+  
+    <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechEye</defName>
+      <label>install mechanoid light sensor</label>
+      <description>Installs mechanoid light sensor.</description>
+      <jobString>Installing mechanoid light sensor.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechEye</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechEye</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Eye</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechEye</addsHediff>
+   </RecipeDef>
+   
+    <HediffDef ParentName="addedPartMech">
+      <defName>MechEye</defName>
+      <label>mechanoid light sensor</label>
+	  <labelNoun>an mechanoid light sensor</labelNoun>
+	  <description>An installed mechanoid light sensor.</description>
+      <descriptionHyperlinks><ThingDef>MechEye</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechEye</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.30</partEfficiency>
+      </addedPartProps>
+	  	  <stages>
+			<li>
+                <statOffsets>
+					<AimingDelayFactor>-0.05</AimingDelayFactor>
+                </statOffsets>
+            </li>
+		</stages>
+   </HediffDef>
+   
+     <!--<Mechanoid Spine>-->
+  
+    <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechSpine</defName>
+      <label>install mechanoid spine</label>
+      <description>Installs mechanoid spine.</description>
+      <jobString>Installing mechanoid spine.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechSpine</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechSpine</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Spine</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechSpine</addsHediff>
+   </RecipeDef>
+   
+    <HediffDef ParentName="addedPartMech">
+      <defName>MechSpine</defName>
+      <label>mechanoid spine</label>
+	  <labelNoun>an mechanoid spine</labelNoun>
+	  <description>An installed mechanoid spine.</description>
+      <descriptionHyperlinks><ThingDef>MechSpine</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechSpine</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.35</partEfficiency>
+      </addedPartProps>
+	  <stages>
+		<li>
+         <capMods>
+            <li>
+               <capacity>Manipulation</capacity>
+               <offset>0.25</offset>
+            </li> 
+         </capMods>
+		</li>	
+		</stages>
+   </HediffDef>
+   
+    <!--<Mechanoid Sound Sensor>-->
+	    
+    <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechEar</defName>
+      <label>install mechanoid sound sensor</label>
+      <description>Installs mechanoid sound sensor.</description>
+      <jobString>Installing mechanoid sound sensor.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechEar</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechEar</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Ear</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechEar</addsHediff>
+   </RecipeDef>
+   
+    <HediffDef ParentName="addedPartMech">
+      <defName>MechEar</defName>
+      <label>mechanoid sound sensor</label>
+	  <labelNoun>an mechanoid sound sensor</labelNoun>
+	  <description>An installed mechanoid sound sensor.</description>
+      <descriptionHyperlinks><ThingDef>MechEar</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechEar</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.45</partEfficiency>
+      </addedPartProps>
+   </HediffDef>
+   
+  <!--<Mechanoid Jaw>-->
+  
+     <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechJaw</defName>
+      <label>install mechanoid jaw</label>
+      <description>Installs mechanoid jaw.</description>
+      <jobString>Installing mechanoid jaw.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechJaw</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechJaw</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Jaw</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechJaw</addsHediff>
+   </RecipeDef>
+   
+   <HediffDef ParentName="addedPartMech">
+      <defName>MechJaw</defName>
+      <label>mechanoid jaw</label>
+	  <labelNoun>an mechanoid jaw</labelNoun>
+	  <description>An installed mechanoid jaw.</description>
+      <descriptionHyperlinks><ThingDef>MechJaw</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechJaw</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.45</partEfficiency>
+      </addedPartProps>
+   </HediffDef>
+   
+     <!--<Mechanoid Exoskeleton>-->
+  
+     <RecipeDef ParentName="SurgeryMech">
+      <defName>InstallMechTorso</defName>
+      <label>install mechanoid exoskeleton</label>
+      <description>Installs mechanoid exoskeleton.</description>
+      <jobString>Installing mechanoid exoskeleton.</jobString>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>MechTorso</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <fixedIngredientFilter>
+         <thingDefs>
+            <li>MechTorso</li>
+         </thingDefs>
+      </fixedIngredientFilter>
+      <appliedOnFixedBodyParts>
+         <li>Torso</li>
+      </appliedOnFixedBodyParts>
+      <addsHediff>MechTorso</addsHediff>
+   </RecipeDef>
+   
+    <HediffDef ParentName="addedPartMechTorso">
+      <defName>MechTorso</defName>
+      <label>mechanoid exoskeleton</label>
+	  <labelNoun>an mechanoid exoskeleton</labelNoun>
+	  <description>An installed mechanoid exoskeleton.</description>
+      <descriptionHyperlinks><ThingDef>MechTorso</ThingDef></descriptionHyperlinks>
+      <spawnThingOnRemoved>MechTorso</spawnThingOnRemoved>
+      <addedPartProps>
+         <partEfficiency>1.0</partEfficiency>
+      </addedPartProps>
+      <stages>
+         <li>
+            <capMods>
+               <li>
+                  <capacity>Manipulation</capacity>
+                  <offset>0.15</offset>
+               </li>
+               <li>
+                  <capacity>Moving</capacity>
+                  <offset>0.15</offset>
+               </li>
+            </capMods>
+			   <statOffsets>
+				<ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+              </statOffsets>
+         </li>
+      </stages>
+   </HediffDef>
+   
+</Defs>

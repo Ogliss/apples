@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
+    <defName>Mech_ADVandroid</defName>
+    <label>placeholder</label>
+    <description>placeholder</description>
+	<uiIconPath>Things/Pawn/Humanlike/UI/IconHuman</uiIconPath>
+	
+    <alienRace>
+        <generalSettings>
+		<maleGenderProbability>1</maleGenderProbability>
+		<immuneToAge>true</immuneToAge>
+        <canLayDown>false</canLayDown>
+		<allowHumanBios>false</allowHumanBios>
+        <immuneToXenophobia>true</immuneToXenophobia>
+			<alienPartGenerator>
+			  <alienbodytypes>
+                <li>Male</li>
+              </alienbodytypes>
+            <alienskincolorgen Class="ColorGenerator_Options">
+                <options>
+                    <li>
+                        <weight>10</weight>
+                        <only>RGBA(1.0,1.0,1.0,1)</only>
+                    </li>
+                </options>
+            </alienskincolorgen>
+            <alienskinsecondcolorgen Class="ColorGenerator_Options">
+                <options>
+                    <li>
+                        <weight>10</weight>
+                        <only>RGBA(1.0,1.0,1.0,1)</only>
+                    </li>
+                </options>
+            </alienskinsecondcolorgen>
+			  <aliencrowntypes>
+                    <li>BasicHead</li>
+			  </aliencrowntypes>
+
+			  <useGenderedHeads>true</useGenderedHeads>
+			  
+			  <headBodyPartDef>MechHead</headBodyPartDef>
+            <customHeadDrawSize>(0.50, 0.50)</customHeadDrawSize>
+            <headOffset>(0.10, 0.35)</headOffset>
+			</alienPartGenerator>
+        </generalSettings>
+		<graphicPaths>
+            <li>
+                <body>ADV/Body/</body>
+				<head>ADV/Head/</head>
+                <skeleton>ADV/Body/</skeleton>
+				<skull>ADV/Head/</skull>
+            </li>
+        </graphicPaths>
+        <hairSettings>
+            <hasHair>false</hasHair>
+        </hairSettings>
+        <thoughtSettings>
+            <cannotReceiveThoughtsAtAll>true</cannotReceiveThoughtsAtAll>
+        </thoughtSettings>
+        <relationSettings>
+            <relationChanceModifierLover>0</relationChanceModifierLover>
+            <relationChanceModifierExLover>0</relationChanceModifierExLover>
+
+            <relationChanceModifierFiance>0</relationChanceModifierFiance>
+            <relationChanceModifierSpouse>0</relationChanceModifierSpouse>
+            <relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+
+            <relationChanceModifierParent>0</relationChanceModifierParent>
+            <relationChanceModifierChild>0</relationChanceModifierChild>
+            <relationChanceModifierSibling>0</relationChanceModifierSibling>
+        </relationSettings>
+        <raceRestriction>
+            <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
+        </raceRestriction>
+    </alienRace>
+	
+		  <tools>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+      <statBases>
+         <BedRestEffectiveness>1</BedRestEffectiveness>
+         <CarryingCapacity>150</CarryingCapacity>
+         <Cleanliness>1</Cleanliness>
+         <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
+         <ComfyTemperatureMax>50000</ComfyTemperatureMax>
+         <Flammability>0</Flammability>
+         <FoodPoisonChance>0</FoodPoisonChance>
+         <ImmunityGainSpeed>1000.0</ImmunityGainSpeed>
+         <MarketValue>2000</MarketValue>
+         <Mass>70.0</Mass>
+         <MeatAmount>75</MeatAmount>
+         <MoveSpeed>5.0</MoveSpeed>
+         <PsychicSensitivity>0</PsychicSensitivity>
+         <ToxicSensitivity>0</ToxicSensitivity>
+         <AccuracyTouch>1.5</AccuracyTouch>
+         <AccuracyShort>1.65</AccuracyShort>
+         <AccuracyMedium>1.75</AccuracyMedium>
+         <AccuracyLong>1.5</AccuracyLong>
+         <MeleeArmorPenetration>2.0</MeleeArmorPenetration>
+         <MeleeHitChance>2.0</MeleeHitChance>
+         <MeleeDodgeChance>1.7</MeleeDodgeChance>
+         <PainShockThreshold>100000</PainShockThreshold>
+         <ShootingAccuracyPawn>1.0</ShootingAccuracyPawn>
+      </statBases>
+	  
+      <race>
+	  <thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<intelligence>Humanlike</intelligence>
+         <lifeExpectancy>1000000000</lifeExpectancy>
+         <baseHungerRate>0</baseHungerRate>
+		 <leatherDef>Plasteel</leatherDef>
+		 <body>BlehDroid</body>
+         <foodType>OmnivoreHuman</foodType>
+		 <nameCategory>HumanStandard</nameCategory>
+		 <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.01, 0.02)</li>
+          <li>(3.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges Inherit= " False" >
+        <li>
+          <def>HumanlikeAdult</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+         <ageGenerationCurve>
+            <points>
+               <li>(14,0)</li>
+               <li>(16,100)</li>
+               <li>(50,100)</li>
+               <li>(500,100)</li>
+               <li>(700,100)</li>
+               <li>(800,100)</li>
+               <li>(900,100)</li>
+               <li>(3000,0)</li>
+            </points>
+			</ageGenerationCurve>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+         <hediffGiverSets Inherit="False">
+		 <li>Human</li>
+         </hediffGiverSets>
+		</race>
+</AlienRace.ThingDef_AlienRace>
+
+<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
+    <defName>Mech_BASandroid</defName>
+    <label>placeholder</label>
+    <description>placeholder</description>
+	<uiIconPath>Things/Pawn/Humanlike/UI/IconHuman</uiIconPath>
+	
+    <alienRace>
+        <generalSettings>
+		<maleGenderProbability>1</maleGenderProbability>
+		<immuneToAge>true</immuneToAge>
+        <canLayDown>false</canLayDown>
+		<allowHumanBios>false</allowHumanBios>
+        <immuneToXenophobia>true</immuneToXenophobia>
+			<alienPartGenerator>
+			  <alienbodytypes>
+                <li>Male</li>
+              </alienbodytypes>
+            <alienskincolorgen Class="ColorGenerator_Options">
+                <options>
+                    <li>
+                        <weight>10</weight>
+                        <only>RGBA(1.0,1.0,1.0,1)</only>
+                    </li>
+                </options>
+            </alienskincolorgen>
+            <alienskinsecondcolorgen Class="ColorGenerator_Options">
+                <options>
+                    <li>
+                        <weight>10</weight>
+                        <only>RGBA(1.0,1.0,1.0,1)</only>
+                    </li>
+                </options>
+            </alienskinsecondcolorgen>
+			  <aliencrowntypes>
+                    <li>BasicHead</li>
+			  </aliencrowntypes>
+
+			  <useGenderedHeads>true</useGenderedHeads>
+			  
+			  <headBodyPartDef>MechHead</headBodyPartDef>
+            <customHeadDrawSize>(0.50, 0.50)</customHeadDrawSize>
+            <headOffset>(0.10, 0.35)</headOffset>
+			</alienPartGenerator>
+        </generalSettings>
+		<graphicPaths>
+            <li>
+                <body>BAS/Body/</body>
+				<head>BAS/Head/</head>
+                <skeleton>BAS/Body/</skeleton>
+				<skull>BAS/Head/</skull>
+            </li>
+        </graphicPaths>
+        <hairSettings>
+            <hasHair>false</hasHair>
+        </hairSettings>
+        <thoughtSettings>
+            <cannotReceiveThoughtsAtAll>true</cannotReceiveThoughtsAtAll>
+        </thoughtSettings>
+        <relationSettings>
+            <relationChanceModifierLover>0</relationChanceModifierLover>
+            <relationChanceModifierExLover>0</relationChanceModifierExLover>
+
+            <relationChanceModifierFiance>0</relationChanceModifierFiance>
+            <relationChanceModifierSpouse>0</relationChanceModifierSpouse>
+            <relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+
+            <relationChanceModifierParent>0</relationChanceModifierParent>
+            <relationChanceModifierChild>0</relationChanceModifierChild>
+            <relationChanceModifierSibling>0</relationChanceModifierSibling>
+        </relationSettings>
+        <raceRestriction>
+            <onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
+        </raceRestriction>
+    </alienRace>
+	
+		  <tools>
+      <li>
+        <label>left fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right fist</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>7</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+      <statBases>
+         <BedRestEffectiveness>1</BedRestEffectiveness>
+         <CarryingCapacity>150</CarryingCapacity>
+         <Cleanliness>1</Cleanliness>
+         <ComfyTemperatureMin>-1000</ComfyTemperatureMin>
+         <ComfyTemperatureMax>50000</ComfyTemperatureMax>
+         <Flammability>0</Flammability>
+         <FoodPoisonChance>0</FoodPoisonChance>
+         <ImmunityGainSpeed>1000.0</ImmunityGainSpeed>
+         <MarketValue>2000</MarketValue>
+         <Mass>70.0</Mass>
+         <MeatAmount>75</MeatAmount>
+         <MoveSpeed>5.0</MoveSpeed>
+         <PsychicSensitivity>0</PsychicSensitivity>
+         <ToxicSensitivity>0</ToxicSensitivity>
+         <AccuracyTouch>1.5</AccuracyTouch>
+         <AccuracyShort>1.65</AccuracyShort>
+         <AccuracyMedium>1.75</AccuracyMedium>
+         <AccuracyLong>1.5</AccuracyLong>
+         <MeleeArmorPenetration>2.0</MeleeArmorPenetration>
+         <MeleeHitChance>2.0</MeleeHitChance>
+         <MeleeDodgeChance>1.7</MeleeDodgeChance>
+         <PainShockThreshold>100000</PainShockThreshold>
+         <ShootingAccuracyPawn>1.0</ShootingAccuracyPawn>
+      </statBases>
+	  
+      <race>
+	  <thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<intelligence>Humanlike</intelligence>
+         <lifeExpectancy>1000000000</lifeExpectancy>
+         <baseHungerRate>0</baseHungerRate>
+		 <leatherDef>Plasteel</leatherDef>
+		 <body>BlehDroid</body>
+         <foodType>OmnivoreHuman</foodType>
+		 <nameCategory>HumanStandard</nameCategory>
+		 <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.01, 0.02)</li>
+          <li>(3.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges Inherit= " False" >
+        <li>
+          <def>HumanlikeAdult</def>
+          <minAge>0</minAge>
+        </li>
+      </lifeStageAges>
+         <ageGenerationCurve>
+            <points>
+               <li>(14,0)</li>
+               <li>(16,100)</li>
+               <li>(50,100)</li>
+               <li>(500,100)</li>
+               <li>(700,100)</li>
+               <li>(800,100)</li>
+               <li>(900,100)</li>
+               <li>(3000,0)</li>
+            </points>
+			</ageGenerationCurve>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+         <hediffGiverSets Inherit="False">
+		 <li>Human</li>
+         </hediffGiverSets>
+		</race>
+</AlienRace.ThingDef_AlienRace>
+
+
+ 
+	
+</Defs>

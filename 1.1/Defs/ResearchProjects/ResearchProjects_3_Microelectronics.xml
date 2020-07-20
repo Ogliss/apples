@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>MechaFabrication</defName>
+    <label>mechanoid tinkering</label>
+    <description>Build mechanoid assemblers, slavanage mechanoid components and disassemble mechanoid more effectively.</description>
+    <baseCost>5000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>AdvancedFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>17.00</researchViewX>
+    <researchViewY>3.90</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>MechBionic</defName>
+    <label>mechanoid bionics</label>
+    <description>Build bionic body parts based on mechanoid structure and materials to replace lost limbs and eyes, vastly superior to classis bionics.</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>MechaFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>17.50</researchViewX>
+    <researchViewY>3.90</researchViewY>
+  </ResearchProjectDef>
+  
+   <ResearchProjectDef>
+    <defName>MechaniteAnalyzer</defName>
+    <label>mechanite-analyzer</label>
+    <description>Build mechanite-analyzers which increase research speed and allow higher-level research projects.</description>
+    <baseCost>8000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>ShipComputerCore</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>18.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+  
+   <ResearchProjectDef>
+    <defName>Prototype</defName>
+    <label>Prototype Mechanite Battery</label>
+    <description>Build mechanite-analyzers which increase research speed and allow higher-level research projects.</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>MechaFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>19.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>MechaFabricationAdv</defName>
+    <label>mechanoid components</label>
+    <description>Learn how to fabricate mechanoid components, without mechanoid scraps.</description>
+    <baseCost>7000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>MechaFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>19.50</researchViewX>
+    <researchViewY>4.00</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>Beta</defName>
+    <label>Beta Mechanite Battery</label>
+    <description>Build mechanite-analyzers which increase research speed and allow higher-level research projects.</description>
+    <baseCost>10000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>Prototype</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>19.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>Alpha</defName>
+    <label>Alpha Mechanite Battery</label>
+    <description>Build mechanite-analyzers which increase research speed and allow higher-level research projects.</description>
+    <baseCost>10000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>Beta</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>19.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+  
+   <ResearchProjectDef>
+    <defName>VanometricPower</defName>
+    <label>Vanometric Power</label>
+    <description>Build mechanite-analyzers which increase research speed and allow higher-level research projects.</description>
+    <baseCost>20000</baseCost>
+    <techLevel>Archotech</techLevel>
+    <unlockExtremeDifficulty>true</unlockExtremeDifficulty>
+    <prerequisites>
+      <li>Alpha</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MechAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>21.50</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+  
+</Defs>

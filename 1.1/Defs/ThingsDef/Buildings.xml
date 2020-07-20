@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!--========================== Mechanite Analzyer ============================-->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>MechAnalyzer</defName>
+    <label>mechanite-analyzer</label>
+    <description>Increases research speed. Needs to be placed near research bench. One research bench can be linked to only one mechanite-analyzer.</description>
+    <graphicData>
+      <texPath>Things/Building/MechAnalyzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.46875</drawSize>
+    </graphicData>
+    <uiIconScale>0.85</uiIconScale>
+    <researchPrerequisites><li>MechaniteAnalyzer</li></researchPrerequisites>
+    <size>(2,2)</size>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.5</fillPercent>
+    <designationHotKey>Misc4</designationHotKey>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>20000</WorkToBuild>
+      <Mass>60</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <Nanosteel>40</Nanosteel>
+      <ComponentSpacer>8</ComponentSpacer>
+	  <ComponentMech>3</ComponentMech>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>450</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <ResearchSpeedFactor>0.1</ResearchSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <!--========================== Mechanoid Assembler ============================-->
+
+  
+    <ThingDef ParentName="BenchBase">
+    <defName>TableMechMachining</defName>
+    <label>mechanoid assembler</label>
+    <description>A work station for assembling machinery like guns and ammunition, or breaking down dead mechanoids.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Tablemechanoid</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3.5,1.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <costList>
+      <Steel>150</Steel>
+      <ComponentIndustrial>7</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <altitudeLayer>Building</altitudeLayer>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>True</useHitPoints>
+    <statBases>
+      <WorkToBuild>5500</WorkToBuild>
+      <MaxHitPoints>280</MaxHitPoints>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(3,1)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <basePowerConsumption>350</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(73,123,138,0)</glowColor>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>ToolCabinet</li>
+        </linkableFacilities>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <building>
+      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>MechaFabrication</li>
+    </researchPrerequisites>
+    <designationHotKey>Misc7</designationHotKey>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+    </placeWorkers>
+  </ThingDef>
+  
+    <!--========================== Prototype Cell ============================-->
+
+  
+    <ThingDef ParentName="BuildingBase">
+    <defName>LowTierMechBattery</defName>
+    <label>Prototype Mechanite Power Cell</label>
+    <description>Prototype of Mechanite Power Cell, generate a small amount of power but uses only a small amount of chemfuel to operate for a long time. This model is rather unstable; may explode when damaged and will explode when exposed to rain. Generate alot of heat.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/MechBatteryLow</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.17)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>150</pathCost>
+    <fillPercent>1.0</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+	   <Mass>8</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,1)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <costList>
+      <Gold>10</Gold>
+	  <Nanosteel>25</Nanosteel>
+      <ComponentSpacer>2</ComponentSpacer>
+	  <ComponentMech>1</ComponentMech>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-500</basePowerConsumption>
+		<shortCircuitInRain>true</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>02.0</fuelConsumptionRate>
+        <fuelCapacity>75.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(163,251,240,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>6</heatPerSecond>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+	  <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>Prototype</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+  </ThingDef>
+  
+    <!--========================== Beta Power Cell ============================-->
+
+  
+   <ThingDef ParentName="BuildingBase">
+    <defName>MediumTierMechBattery</defName>
+    <label>Beta Mechanite Power Cell</label>
+    <description>Beta version of Mechanite Power Cell, generate power and uses only a small amount of chemfuel to operate for a long time. This model is rather bulky and unnecesary expansive, due to it desing. Generate alot of heat.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/MechBatteryMedium</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	   <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>150</pathCost>
+    <fillPercent>1.0</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>4500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+	   <Mass>45</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,3)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <costList>
+      <Gold>35</Gold>
+	  <Nanosteel>160</Nanosteel>
+      <ComponentSpacer>4</ComponentSpacer>
+	  <ComponentMech>2</ComponentMech>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-1000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>02.0</fuelConsumptionRate>
+        <fuelCapacity>75.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(163,251,240,0)</glowColor>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>6</heatPerSecond>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>Beta</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>13</constructionSkillPrerequisite>
+  </ThingDef>
+  
+    <!--========================== Alpha Cell ============================-->
+
+  
+   <ThingDef ParentName="BuildingBase">
+    <defName>AlphaTierMechBattery</defName>
+    <label>Alpha Mechanite Power Cell</label>
+    <description>Alpha version of Mechanite Power Cell, generate power and uses only a small amount of chemfuel to operate for a long time. This model is free of all other flaws of it predecessors, and can be considered as a currently closest thing to Vanometric power sources.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Alpha</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <drawSize>(2,3)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>150</pathCost>
+    <fillPercent>1.0</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <rotatable>true</rotatable>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>6500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+	  <Mass>15</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,2)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	 <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <costList>
+      <Gold>45</Gold>
+	  <Nanosteel>50</Nanosteel>
+      <ComponentSpacer>5</ComponentSpacer>
+	  <ComponentMech>4</ComponentMech>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-1000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>01.90</fuelConsumptionRate>
+        <fuelCapacity>75.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(163,251,240,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <designationHotKey>Misc3</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>Alpha</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>14</constructionSkillPrerequisite>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+  <!--========================== Mechanoid Components ============================-->
+
+
+ <ThingDef ParentName="ResourceBase">
+    <defName>ComponentMech</defName>
+    <label>mechanoid component</label>
+    <description>Ultra-tech quality electronic equipment, used mostly as one of many parts in everything related mechanoids meance.</description>
+    <graphicData>
+      <texPath>Things/Item/ComponentMech</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>200</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+  </ThingDef>
+  
+    <RecipeDef>
+    <defName>Make_ComponentMech</defName>
+    <label>salvage mechanoid component</label>
+    <description>salvage an mechanoid component.</description>
+    <jobString>salvaging mechanoid component.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>20000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<recipeUsers>
+      <li>TableMechMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MechScraps</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Nanosteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentSpacer</li>
+        <li>MechScraps</li>
+        <li>Nanosteel</li>
+        <li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ComponentMech>1</ComponentMech>
+    </products>
+    <researchPrerequisite>MechaFabrication</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>12</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+   <RecipeDef>
+    <defName>Make_ComponentMechAdv</defName>
+    <label>make mechanoid component</label>
+    <description>make an mechanoid component.</description>
+    <jobString>making mechanoid component.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>28000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+	<recipeUsers>
+      <li>TableMechMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Nanosteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentSpacer</li>
+        <li>MechScraps</li>
+        <li>Nanosteel</li>
+        <li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <ComponentMech>1</ComponentMech>
+    </products>
+    <researchPrerequisite>MechaFabricationAdv</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>13</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+    <!--========================== Mechanoid Scraps ============================-->
+
+  
+   <ThingDef ParentName="ResourceBase">
+    <defName>MechScraps</defName>
+    <label>mechanoid scraps</label>
+    <description>Parts of broken disaasembled Mechanoid.</description>
+    <graphicData>
+      <texPath>Things/Item/MechScraps</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>100</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>200</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  
+    <!--========================== Nanosteel ============================-->
+
+  
+    <ThingDef ParentName="ResourceBase">
+    <defName>Nanosteel</defName>
+    <label>nanosteel</label>
+    <description>Ultra-Tech structural material, extremaly durable and light due to it mechanite infused nature.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/Nanosteel</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    	<statBases>
+      		<MarketValue>15.5</MarketValue>
+      		<Mass>0.15</Mass>
+      		<StuffPower_Armor_Sharp>1.25</StuffPower_Armor_Sharp>
+      		<StuffPower_Armor_Blunt>1.30</StuffPower_Armor_Blunt>
+      		<StuffPower_Armor_Heat>1.3</StuffPower_Armor_Heat>
+      		<StuffPower_Insulation_Cold>4</StuffPower_Insulation_Cold>
+      		<StuffPower_Insulation_Heat>5</StuffPower_Insulation_Heat>
+      		<SharpDamageMultiplier>1.20</SharpDamageMultiplier>
+      		<BluntDamageMultiplier>0.9</BluntDamageMultiplier>
+			<Flammability>0</Flammability>
+    	</statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <constructEffect>ConstructMetal</constructEffect>
+      <color>(178,184,167)</color>
+      <soundImpactStuff>BulletImpact_Metal</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>3.2</MaxHitPoints>
+        <Beauty>0.7</Beauty>
+        <Flammability>0</Flammability>
+        <WorkToMake>2.2</WorkToMake>
+        <WorkToBuild>2.2</WorkToBuild>
+        <MeleeWeapon_CooldownMultiplier>0.8</MeleeWeapon_CooldownMultiplier>
+      </statFactors>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+  </ThingDef>
+  
+   
+</Defs>

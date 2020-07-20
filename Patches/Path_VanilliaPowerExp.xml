@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+   <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Power</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFE_SmallVanometricPowerCell"]/costList</xpath>
+				<value>
+            <costList>
+                <Gold>50</Gold>
+                <Nanosteel>20</Nanosteel>
+                <Uranium>25</Uranium>
+                <ComponentMech>7</ComponentMech>
+            </costList>
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Power</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFE_SmallVanometricPowerCell"]/statBases</xpath>
+				<value>
+			<statBases>
+						<MarketValue>400</MarketValue>
+						<MaxHitPoints>100</MaxHitPoints>
+						<Flammability>0</Flammability>
+						<Mass>8</Mass>
+						<WorkToBuild>3000</WorkToBuild>
+			</statBases>
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+ <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Power</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="VFE_SmallVanometricPowerCell"]</xpath>
+				<value>
+     <researchPrerequisites>
+      <li>VanometricPower</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+	<designationCategory>Power</designationCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+	 <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Power</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFE_LargeVanometricPowerCell"]/costList</xpath>
+				<value>
+            <costList>
+                <Gold>200</Gold>
+                <Nanosteel>80</Nanosteel>
+                <Uranium>10</Uranium>
+                <ComponentMech>24</ComponentMech>
+            </costList>
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+	  <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Power</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFE_LargeVanometricPowerCell"]/statBases</xpath>
+				<value>
+			<statBases>
+						<MarketValue>400</MarketValue>
+						<MaxHitPoints>100</MaxHitPoints>
+						<Flammability>0</Flammability>
+						<Mass>8</Mass>
+						<WorkToBuild>120000</WorkToBuild>
+			</statBases>
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+  <Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Power</li>
+	</mods>
+	<match Class="PatchOperationSequence">
+	<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="VFE_LargeVanometricPowerCell"]</xpath>
+				<value>
+     <researchPrerequisites>
+      <li>VanometricPower</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>16</constructionSkillPrerequisite>
+	<designationCategory>Power</designationCategory>
+				</value>
+			</li>
+		</operations>
+	</match>
+	</Operation>
+	
+	
+	
+</Patch>

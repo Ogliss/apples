@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="SleepDroidFertBase">
+    <defName>ADVandroidcreator</defName>
+    <label>advanced android</label>
+    <description>A robot.</description>
+    <graphicData>
+	  <texPath>Sleeping</texPath>
+      <color>(245,245,245)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>7.0</MarketValue>
+    </statBases>
+    <recipeMaker>
+      <recipeUsers>
+        <li>TableMechMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+	<costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>0.000000000001</hatcherDaystoHatch>
+        <hatcherPawn>ADVcolonist</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+  
+   <ThingDef Abstract="True" Name="SleepDroidBase" ParentName="OrganicProductBase" >
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggBirdSmall</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <Mass>0.15</Mass>
+      <MaxHitPoints>20</MaxHitPoints>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Flammability>0.7</Flammability>
+    </statBases>
+  </ThingDef>
+  
+    <ThingDef Abstract="True" Name="SleepDroidFertBase" ParentName="SleepDroidBase" >
+    <tickerType>Normal</tickerType>
+    <thingCategories>
+      <li>EggsFertilized</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_TemperatureRuinable">
+        <minSafeTemperature>-10000</minSafeTemperature>
+        <maxSafeTemperature>75000</maxSafeTemperature>
+        <progressPerDegreePerTick>0.00003</progressPerDegreePerTick>
+      </li>
+    </comps>
+  </ThingDef>
+  
+   <WorkGiverDef>
+    <defName>DoBillsUseAndroidBench</defName>
+    <label>make things at an android bench</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>TableMechMachining</li>
+    </fixedBillGiverDefs>
+    <verb>craft</verb>
+    <gerund>crafting at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>
